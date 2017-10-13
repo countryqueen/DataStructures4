@@ -160,49 +160,7 @@ public class TreeGui extends javax.swing.JFrame {
         //classmate Luis Vargas suggested that I do not drag the jFileChooser into my
         //project but that I create it in the code instead. It was indeed a lot easier to create 
         //the code instead of draging it in there.
-        JFileChooser chooser;
-        File f = null;
-       //the jFile Chooser is created.
-        try
-        {
-            chooser = new JFileChooser();
-            chooser.showOpenDialog(null);
-            f = chooser.getSelectedFile();
-            
-            String fileName =f.getAbsolutePath();
-            BufferedReader br =new BufferedReader(new FileReader(fileName));
-            
-            try
-            {
-                StringBuilder sb = new StringBuilder(); // reads from ACII to Strings ?
-                String line = br.readLine(); //Reads each line of text file
-
-                while (line != null)  //while there exist a String?
-                {
-                sb.append(line); //continues
-                sb.append(" "); //I am not sure
-                line = br.readLine(); //not sure here either
-                }
-            
-                String strFile = sb.toString(); // The read text file is stored as a string in the variable strFile //local variable
-                //Make it into a Class Variable 
-                //The textFile  is stored in a long ass string
-                //Find a way to seperate each word and store each word in a tree
-  
-            } 
-            finally
-            { 
-                br.close();
-            }
-        
-        }
-        catch(Exception ex) 
-        {
-            
-            
-        }
-        
-
+       openFile();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
